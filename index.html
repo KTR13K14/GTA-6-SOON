@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>GTA 6 SOON — Grand Theft Auto VI</title>
 
@@ -11,6 +16,7 @@
     name="description"
     content="GTA 6 SOON — Grand Theft Auto VI"
 />
+
 
 <style>
 
@@ -33,7 +39,7 @@ body{
 
     background:#050507;
 
-    color:#ffffff;
+    color:#fff;
 
     font-family:
         Inter,
@@ -49,6 +55,10 @@ a{
     text-decoration:none;
 }
 
+button{
+    font-family:inherit;
+}
+
 
 /* =========================================================
    VARIABLES
@@ -56,15 +66,17 @@ a{
 
 :root{
 
-    --purple:#7657ff;
-    --purple2:#a486ff;
+    --accent:#7657ff;
+    --accent-light:#a98cff;
 
-    --dark:#07080c;
-    --panel:#10121a;
+    --bg:#050507;
+    --panel:#11131b;
+    --panel2:#171a24;
 
-    --line:#292d3a;
+    --line:#292d3b;
 
-    --muted:#a5adbd;
+    --text:#ffffff;
+    --muted:#a0a7b7;
 
 }
 
@@ -79,17 +91,19 @@ a{
 
     min-height:100vh;
 
-    overflow:hidden;
-
     display:flex;
 
     align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
 
 }
 
 
 /* =========================================================
-   IMAGE GTA 6
+   PHOTO
 ========================================================= */
 
 .hero-image{
@@ -99,7 +113,6 @@ a{
     inset:0;
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -107,35 +120,35 @@ a{
     object-position:center;
 
     filter:
-        brightness(.92)
+        brightness(.90)
         saturate(1.08)
-        contrast(1.02);
+        contrast(1.03);
 
     transform:scale(1.02);
 
     animation:
-        zoomImage 20s
+        cinematicZoom
+        20s
         ease-in-out
         infinite
         alternate;
-
 }
 
-@keyframes zoomImage{
+@keyframes cinematicZoom{
 
     from{
         transform:scale(1.02);
     }
 
     to{
-        transform:scale(1.075);
+        transform:scale(1.07);
     }
 
 }
 
 
 /* =========================================================
-   OVERLAY LÉGER
+   OVERLAY
 ========================================================= */
 
 .hero-overlay{
@@ -148,21 +161,19 @@ a{
 
         linear-gradient(
             90deg,
-            rgba(0,0,0,.68) 0%,
-            rgba(0,0,0,.30) 34%,
-            rgba(0,0,0,.04) 62%,
-            rgba(0,0,0,.18) 100%
+            rgba(0,0,0,.48),
+            rgba(0,0,0,.12) 45%,
+            rgba(0,0,0,.35)
         ),
 
         linear-gradient(
             0deg,
-            rgba(0,0,0,.65) 0%,
-            rgba(0,0,0,.05) 55%,
-            rgba(0,0,0,.28) 100%
+            rgba(0,0,0,.62),
+            rgba(0,0,0,.05) 52%,
+            rgba(0,0,0,.25)
         );
 
     z-index:1;
-
 }
 
 
@@ -180,6 +191,8 @@ a{
 
     height:82px;
 
+    z-index:10;
+
     display:flex;
 
     align-items:center;
@@ -187,9 +200,7 @@ a{
     justify-content:space-between;
 
     padding:
-        0 45px;
-
-    z-index:5;
+        0 42px;
 
     background:
         linear-gradient(
@@ -197,7 +208,6 @@ a{
             rgba(0,0,0,.45),
             transparent
         );
-
 }
 
 .logo{
@@ -208,13 +218,12 @@ a{
 
     gap:12px;
 
-    font-size:21px;
+    font-size:22px;
 
     font-weight:900;
 
     text-shadow:
-        0 3px 16px #000;
-
+        0 3px 15px #000;
 }
 
 .logo-icon{
@@ -238,70 +247,12 @@ a{
     box-shadow:
         0 8px 30px
         rgba(118,87,255,.5);
-
 }
 
 .header-pill{
 
     padding:
         10px 15px;
-
-    border-radius:999px;
-
-    background:
-        rgba(0,0,0,.40);
-
-    border:
-        1px solid
-        rgba(255,255,255,.20);
-
-    backdrop-filter:
-        blur(12px);
-
-    font-size:12px;
-
-    font-weight:800;
-
-}
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-content{
-
-    position:relative;
-
-    z-index:3;
-
-    width:min(1180px,92%);
-
-    margin:auto;
-
-    padding:
-        110px 0 90px;
-
-}
-
-.hero-inner{
-
-    max-width:800px;
-
-    text-align:left;
-
-}
-
-.badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:
-        9px 15px;
 
     border-radius:999px;
 
@@ -313,7 +264,68 @@ a{
         rgba(255,255,255,.20);
 
     backdrop-filter:
-        blur(12px);
+        blur(14px);
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(1120px,92%);
+
+    margin:auto;
+
+    padding:
+        100px 0 85px;
+}
+
+.hero-inner{
+
+    text-align:center;
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        9px 16px;
+
+    border-radius:999px;
+
+    background:
+        rgba(0,0,0,.34);
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    backdrop-filter:
+        blur(14px);
 
     font-size:13px;
 
@@ -324,31 +336,27 @@ a{
         .8s
         ease
         both;
-
 }
 
 .badge-dot{
 
     width:8px;
-
     height:8px;
 
     border-radius:50%;
 
-    background:#ffffff;
+    background:#fff;
 
     box-shadow:
-        0 0 15px #ffffff;
-
+        0 0 14px #fff;
 }
-
 
 @keyframes fadeDown{
 
     from{
         opacity:0;
         transform:
-            translateY(-20px);
+            translateY(-18px);
     }
 
     to{
@@ -356,37 +364,35 @@ a{
         transform:
             translateY(0);
     }
-
 }
 
 
 /* =========================================================
-   TITLE
+   TITRE
 ========================================================= */
 
 h1{
 
-    margin-top:27px;
+    margin-top:26px;
 
     font-size:
         clamp(
-            60px,
+            56px,
             8vw,
             125px
         );
 
     line-height:.82;
 
-    letter-spacing:
-        -5px;
+    letter-spacing:-5px;
 
     font-weight:950;
 
     text-transform:uppercase;
 
     text-shadow:
-        0 8px 35px #000b,
-        0 0 80px #0005;
+        0 8px 35px #000c,
+        0 0 70px #0006;
 
     animation:
         titleIn
@@ -394,48 +400,44 @@ h1{
         .1s
         ease
         both;
-
 }
 
 .title-main{
 
     display:block;
 
-    color:#ffffff;
-
+    color:#fff;
 }
 
 .title-grand{
 
     display:block;
 
-    margin-top:13px;
+    margin-top:14px;
 
-    font-size:.58em;
+    font-size:.59em;
 
     line-height:.9;
 
-    letter-spacing:
-        -2px;
-
+    letter-spacing:-2px;
 }
 
 .title-auto{
 
     display:block;
 
+    margin-top:4px;
+
     font-size:.70em;
 
     line-height:.9;
 
-    margin-top:4px;
-
     background:
         linear-gradient(
             90deg,
-            #ffffff,
-            #ffd2df,
-            #ffffff
+            #fff,
+            #ffd3df,
+            #fff
         );
 
     background-size:200%;
@@ -451,34 +453,26 @@ h1{
         4s
         linear
         infinite;
-
 }
-
 
 @keyframes titleIn{
 
     from{
-
         opacity:0;
 
         transform:
-            translateY(35px)
+            translateY(30px)
             scale(.97);
-
     }
 
     to{
-
         opacity:1;
 
         transform:
             translateY(0)
             scale(1);
-
     }
-
 }
-
 
 @keyframes shine{
 
@@ -489,7 +483,6 @@ h1{
     to{
         background-position:200%;
     }
-
 }
 
 
@@ -499,50 +492,42 @@ h1{
 
 .hero-description{
 
-    max-width:650px;
+    max-width:720px;
 
-    margin-top:26px;
+    margin:
+        27px auto 0;
 
     color:
-        rgba(255,255,255,.92);
+        rgba(255,255,255,.94);
 
     font-size:18px;
 
     line-height:1.6;
 
     text-shadow:
-        0 3px 15px #000;
+        0 3px 16px #000;
 
     animation:
         fadeUp
         1s
-        .3s
+        .35s
         ease
         both;
-
 }
-
 
 @keyframes fadeUp{
 
     from{
-
         opacity:0;
-
         transform:
             translateY(20px);
-
     }
 
     to{
-
         opacity:1;
-
         transform:
             translateY(0);
-
     }
-
 }
 
 
@@ -552,11 +537,12 @@ h1{
 
 .timer-card{
 
-    margin-top:34px;
-
     width:min(820px,100%);
 
-    padding:22px;
+    margin:
+        36px auto 0;
+
+    padding:24px;
 
     border-radius:22px;
 
@@ -568,29 +554,26 @@ h1{
         rgba(255,255,255,.20);
 
     backdrop-filter:
-        blur(14px);
+        blur(15px);
 
     box-shadow:
-        0 25px 80px
-        rgba(0,0,0,.35);
+        0 30px 90px #0007;
 
     animation:
         fadeUp
         1s
-        .45s
+        .5s
         ease
         both;
-
 }
 
 .timer-title{
 
-    margin-bottom:16px;
+    margin-bottom:17px;
 
-    font-size:13px;
+    font-size:14px;
 
     font-weight:900;
-
 }
 
 .timer{
@@ -601,7 +584,6 @@ h1{
         repeat(4,1fr);
 
     gap:12px;
-
 }
 
 .time-box{
@@ -618,6 +600,16 @@ h1{
         1px solid
         rgba(255,255,255,.14);
 
+    transition:.2s;
+}
+
+.time-box:hover{
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(0,0,0,.60);
 }
 
 .time-number{
@@ -626,13 +618,12 @@ h1{
         clamp(
             34px,
             5vw,
-            53px
+            54px
         );
 
     line-height:1;
 
     font-weight:950;
-
 }
 
 .time-label{
@@ -640,7 +631,7 @@ h1{
     margin-top:7px;
 
     color:
-        rgba(255,255,255,.65);
+        rgba(255,255,255,.66);
 
     font-size:10px;
 
@@ -648,21 +639,18 @@ h1{
 
     letter-spacing:
         1.5px;
-
 }
 
 .release{
 
-    margin-top:17px;
+    margin-top:18px;
 
     font-size:13px;
-
 }
 
 .release strong{
 
-    color:#ffd6e1;
-
+    color:#ffd4e0;
 }
 
 .disclaimer{
@@ -670,141 +658,109 @@ h1{
     margin-top:8px;
 
     color:
-        rgba(255,255,255,.65);
+        rgba(255,255,255,.64);
 
     font-size:11px;
-
 }
 
 
 /* =========================================================
-   SECTIONS
+   PRÉCOMMANDES
 ========================================================= */
 
-.page-section{
+.preorders{
 
-    padding:
-        95px 0;
+    margin-top:32px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #08090d,
-            #0b0d13
-        );
-
+    animation:
+        fadeUp
+        1s
+        .65s
+        ease
+        both;
 }
 
-.section-container{
+.preorders-title{
 
-    width:min(1100px,92%);
-
-    margin:auto;
-
-}
-
-.section-heading{
-
-    text-align:center;
-
-    margin-bottom:40px;
-
-}
-
-.section-heading h2{
-
-    font-size:
-        clamp(
-            34px,
-            5vw,
-            52px
-        );
-
-    letter-spacing:-2px;
-
-}
-
-.section-heading p{
-
-    margin-top:10px;
-
-    color:var(--muted);
+    margin-bottom:17px;
 
     font-size:16px;
 
+    font-weight:900;
+
+    text-shadow:
+        0 3px 15px #000;
 }
 
-
-/* =========================================================
-   EDITIONS
-========================================================= */
-
-.editions{
+.cards{
 
     display:grid;
 
     grid-template-columns:
-        1fr 1fr;
+        repeat(2,1fr);
 
-    gap:20px;
+    gap:18px;
 
+    max-width:900px;
+
+    margin:auto;
 }
 
-.edition{
+.card{
 
-    position:relative;
+    padding:
+        28px;
 
-    padding:30px;
+    text-align:left;
 
     border-radius:22px;
 
     background:
         linear-gradient(
             180deg,
-            #141720,
-            #0d1017
+            rgba(19,22,30,.82),
+            rgba(8,9,13,.80)
         );
 
     border:
         1px solid
-        var(--line);
+        rgba(118,87,255,.72);
+
+    backdrop-filter:
+        blur(16px);
 
     box-shadow:
-        0 20px 60px
-        #0005;
+        0 20px 60px #0007;
 
-    transition:.25s;
-
+    transition:
+        transform .2s,
+        border-color .2s;
 }
 
-.edition:hover{
+.card:hover{
 
     transform:
         translateY(-5px);
 
     border-color:
-        #7657ff88;
-
+        rgba(169,140,255,.95);
 }
 
-.edition.ultimate{
+.ultimate{
 
     border-color:
-        #7657ff99;
+        rgba(118,87,255,.90);
 
     box-shadow:
         0 20px 70px
-        #7657ff20;
-
+        rgba(118,87,255,.15);
 }
 
 .recommended{
 
-    position:absolute;
+    display:inline-block;
 
-    top:18px;
-
-    right:18px;
+    margin-bottom:12px;
 
     padding:
         6px 10px;
@@ -812,68 +768,65 @@ h1{
     border-radius:999px;
 
     background:
-        #7657ff22;
+        rgba(118,87,255,.15);
 
     border:
         1px solid
-        #7657ff66;
+        rgba(118,87,255,.45);
 
-    color:#c8bbff;
+    color:#c8bcff;
 
     font-size:10px;
 
     font-weight:900;
-
 }
 
-.edition-icon{
+.platform-icon{
 
     font-size:32px;
 
+    margin-bottom:12px;
 }
 
-.edition h3{
-
-    margin-top:12px;
+.card h2{
 
     font-size:25px;
 
+    margin-bottom:10px;
 }
 
-.price{
-
-    margin-top:10px;
+.card .price{
 
     font-size:40px;
 
     font-weight:950;
 
+    letter-spacing:-1px;
 }
 
-.platforms{
+.card .platforms{
 
-    margin-top:3px;
+    margin-top:4px;
 
-    color:#818a9c;
+    color:#818a9d;
 
     font-size:12px;
-
 }
 
-.features-list{
+.feature-list{
 
     display:grid;
 
     gap:10px;
 
-    margin-top:25px;
+    margin:
+        24px 0;
 
-    margin-bottom:25px;
+    color:#ccd1dc;
 
-    color:#cdd2dc;
+    font-size:13px;
 
-    font-size:14px;
-
+    line-height:1.45;
 }
 
 .buy-button{
@@ -882,24 +835,21 @@ h1{
 
     min-height:48px;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+    border:0;
 
     border-radius:12px;
 
-    background:#ffffff;
+    background:#fff;
 
-    color:#09090d;
+    color:#08080b;
 
-    font-size:14px;
+    font-size:13px;
 
     font-weight:900;
 
-    transition:.2s;
+    cursor:pointer;
 
+    transition:.2s;
 }
 
 .buy-button:hover{
@@ -907,8 +857,58 @@ h1{
     transform:
         translateY(-2px);
 
-    background:#ffdce6;
+    background:#ffdce7;
+}
 
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section{
+
+    padding:
+        90px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #07080c,
+            #0c0e14
+        );
+}
+
+.section-container{
+
+    width:min(1100px,92%);
+
+    margin:auto;
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.section-heading h2{
+
+    font-size:
+        clamp(
+            34px,
+            5vw,
+            48px
+        );
+
+    letter-spacing:-2px;
+}
+
+.section-heading p{
+
+    margin-top:9px;
+
+    color:var(--muted);
 }
 
 
@@ -922,27 +922,27 @@ h1{
 
     padding:30px;
 
+    text-align:center;
+
     border-radius:22px;
 
     background:
         linear-gradient(
             135deg,
             #17132e,
-            #10131a
+            #10131b
         );
 
     border:
         1px solid
-        #332c5c;
-
-    text-align:center;
-
+        #342d5e;
 }
 
 .physical h2{
 
     font-size:30px;
 
+    margin-bottom:10px;
 }
 
 .physical p{
@@ -950,12 +950,11 @@ h1{
     max-width:750px;
 
     margin:
-        12px auto 25px;
+        0 auto 24px;
 
     color:var(--muted);
 
     line-height:1.6;
-
 }
 
 .physical-buttons{
@@ -967,12 +966,11 @@ h1{
     flex-wrap:wrap;
 
     gap:12px;
-
 }
 
 .physical-button{
 
-    min-height:46px;
+    min-height:45px;
 
     padding:
         0 18px;
@@ -998,7 +996,6 @@ h1{
     font-weight:850;
 
     transition:.2s;
-
 }
 
 .physical-button:hover{
@@ -1008,7 +1005,6 @@ h1{
 
     border-color:
         #7657ff88;
-
 }
 
 
@@ -1024,14 +1020,13 @@ h1{
         repeat(3,1fr);
 
     gap:18px;
-
 }
 
 .trailer{
 
     overflow:hidden;
 
-    border-radius:19px;
+    border-radius:20px;
 
     background:#10131b;
 
@@ -1040,33 +1035,29 @@ h1{
         var(--line);
 
     box-shadow:
-        0 20px 50px
-        #0005;
-
+        0 20px 55px #0006;
 }
 
 .trailer iframe{
 
     width:100%;
 
-    aspect-ratio:16/9;
-
-    display:block;
+    aspect-ratio:
+        16 / 9;
 
     border:0;
 
+    display:block;
 }
 
 .trailer-info{
 
     padding:18px;
-
 }
 
 .trailer-info h3{
 
     font-size:18px;
-
 }
 
 .trailer-info p{
@@ -1078,7 +1069,6 @@ h1{
     font-size:13px;
 
     line-height:1.5;
-
 }
 
 .youtube-link{
@@ -1087,12 +1077,11 @@ h1{
 
     margin-top:13px;
 
-    color:#c1b5ff;
+    color:#c1b6ff;
 
     font-size:12px;
 
-    font-weight:800;
-
+    font-weight:850;
 }
 
 
@@ -1102,15 +1091,12 @@ h1{
 
 .info-grid{
 
-    margin-top:18px;
-
     display:grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
     gap:16px;
-
 }
 
 .info-card{
@@ -1123,29 +1109,26 @@ h1{
         linear-gradient(
             180deg,
             #121620,
-            #0e1118
+            #0d1016
         );
 
     border:
         1px solid
         var(--line);
-
 }
 
 .info-icon{
 
     font-size:28px;
 
-    margin-bottom:12px;
-
+    margin-bottom:11px;
 }
 
 .info-card h3{
 
     font-size:17px;
 
-    margin-bottom:8px;
-
+    margin-bottom:7px;
 }
 
 .info-card p{
@@ -1155,7 +1138,6 @@ h1{
     font-size:13px;
 
     line-height:1.6;
-
 }
 
 
@@ -1166,9 +1148,11 @@ h1{
 footer{
 
     padding:
-        30px 0;
+        30px 20px;
 
-    background:#07080c;
+    text-align:center;
+
+    background:#06070a;
 
     border-top:
         1px solid
@@ -1177,14 +1161,287 @@ footer{
     color:#697387;
 
     font-size:12px;
-
-    text-align:center;
-
 }
 
 
 /* =========================================================
-   PAGE DE FIN
+   MODAL
+========================================================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.active{
+
+    display:flex;
+
+}
+
+.modal-background{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,.38);
+
+    backdrop-filter:
+        blur(7px);
+}
+
+.modal-box{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(500px,100%);
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:
+        rgba(20,21,30,.72);
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+        0 35px 110px
+        rgba(0,0,0,.65);
+
+    animation:
+        modalAppear
+        .22s
+        ease
+        both;
+}
+
+@keyframes modalAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.94)
+            translateY(12px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+.modal-close{
+
+    position:absolute;
+
+    top:14px;
+
+    right:14px;
+
+    width:36px;
+
+    height:36px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:14px;
+}
+
+.modal-close:hover{
+
+    background:
+        rgba(255,255,255,.16);
+}
+
+.modal-icon{
+
+    width:54px;
+
+    height:54px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a98cff,
+            #6245e8
+        );
+
+    font-size:25px;
+
+    margin-bottom:15px;
+}
+
+.modal-box h2{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+}
+
+.modal-description{
+
+    color:#9da5b7;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    margin-bottom:20px;
+}
+
+.platform-options{
+
+    display:grid;
+
+    gap:10px;
+}
+
+.platform-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s,
+        background .2s,
+        border-color .2s;
+}
+
+.platform-option:hover{
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255,255,255,.10);
+
+    border-color:
+        rgba(255,255,255,.32);
+}
+
+.platform-option-icon{
+
+    width:43px;
+
+    height:43px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    font-size:21px;
+
+    flex-shrink:0;
+}
+
+.platform-option-text strong{
+
+    display:block;
+
+    font-size:14px;
+}
+
+.platform-option-text small{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#7e879b;
+
+    font-size:11px;
+}
+
+.physical-option{
+
+    border-color:
+        rgba(118,87,255,.50);
+}
+
+.modal-note{
+
+    margin-top:18px;
+
+    color:#747e91;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   PAGE SORTIE
 ========================================================= */
 
 #released{
@@ -1203,15 +1460,14 @@ footer{
         radial-gradient(
             circle at 50% 20%,
             #39266e,
-            #0f0c1b 45%,
+            #100c1d 45%,
             #050507 85%
         );
-
 }
 
 .released-box{
 
-    width:min(800px,92%);
+    width:min(850px,92%);
 
     padding:50px 25px;
 
@@ -1227,7 +1483,6 @@ footer{
     box-shadow:
         0 35px 100px
         #000b;
-
 }
 
 .released-box h2{
@@ -1240,7 +1495,6 @@ footer{
         );
 
     margin-bottom:12px;
-
 }
 
 .released-box p{
@@ -1248,160 +1502,110 @@ footer{
     color:#aeb4c5;
 
     font-size:17px;
-
 }
 
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE
 ========================================================= */
 
-@media(max-width:850px){
+@media(max-width:900px){
 
     .header{
 
         padding:
             0 20px;
-
     }
 
     .header-pill{
 
         display:none;
-
     }
 
-    .hero-inner{
+    .cards{
 
-        max-width:100%;
-
-        text-align:center;
-
+        grid-template-columns:
+            1fr;
     }
 
-    .badge{
+    .trailer-grid{
 
-        justify-content:center;
-
+        grid-template-columns:
+            1fr;
     }
+
+    .info-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+@media(max-width:650px){
 
     .hero-content{
 
-        padding-top:105px;
+        width:
+            calc(100% - 20px);
 
+        padding:
+            100px 0 70px;
     }
 
     h1{
 
-        font-size:56px;
+        font-size:50px;
 
-        letter-spacing:-3px;
+        letter-spacing:-2px;
+    }
 
+    .title-grand{
+
+        font-size:.53em;
+    }
+
+    .title-auto{
+
+        font-size:.64em;
     }
 
     .hero-description{
 
-        margin-left:auto;
-        margin-right:auto;
+        font-size:15px;
+    }
 
+    .timer-card{
+
+        padding:15px;
     }
 
     .timer{
 
         grid-template-columns:
             repeat(2,1fr);
-
-    }
-
-    .editions{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .trailer-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .info-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media(max-width:520px){
-
-    .hero{
-
-        min-height:
-            100svh;
-
-    }
-
-    .hero-content{
-
-        width:
-            calc(100% - 24px);
-
-    }
-
-    h1{
-
-        font-size:48px;
-
-        letter-spacing:-2px;
-
-    }
-
-    .title-grand{
-
-        font-size:.52em;
-
-    }
-
-    .title-auto{
-
-        font-size:.63em;
-
-    }
-
-    .hero-description{
-
-        font-size:15px;
-
-    }
-
-    .timer-card{
-
-        padding:15px;
-
     }
 
     .time-box{
 
-        padding:17px 8px;
-
+        padding:
+            18px 8px;
     }
 
-    .number{
+    .time-number{
 
-        font-size:32px;
-
+        font-size:31px;
     }
 
-}
+    .card{
 
+        padding:23px;
+    }
 
-/* =========================================================
-   QUAND LE SITE EST OUVERT
-========================================================= */
+    .modal-box{
 
-#siteContent{
-    display:block;
+        padding:25px 18px;
+    }
 }
 
 </style>
@@ -1412,18 +1616,21 @@ footer{
 <body>
 
 
-<!-- =====================================================
-     PAGE PRINCIPALE
-====================================================== -->
+<!-- =========================================================
+     SITE
+========================================================= -->
 
-<div id="siteContent">
+<div id="site">
 
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
 
-    <!-- TA PHOTO -->
-
+    <!-- IMAGE -->
     <img
         src="gta6.png"
         class="hero-image"
@@ -1458,7 +1665,7 @@ footer{
     </header>
 
 
-    <!-- HERO -->
+    <!-- CONTENU -->
 
     <div class="hero-content">
 
@@ -1494,8 +1701,8 @@ footer{
             <p class="hero-description">
 
                 Le prochain chapitre de Grand Theft Auto arrive
-                le 19 novembre 2026 sur PlayStation 5 et
-                Xbox Series X|S.
+                le 19 novembre 2026 sur PlayStation 5
+                et Xbox Series X|S.
 
             </p>
 
@@ -1584,6 +1791,7 @@ footer{
                 <div class="release">
 
                     Sortie prévue le
+
                     <strong>
                         19 novembre 2026
                     </strong>
@@ -1593,33 +1801,157 @@ footer{
 
                 <div class="disclaimer">
 
-                    ⚠️ La date affichée est susceptible
-                    d'être modifiée.
+                    ⚠️ La date affichée peut être modifiée.
 
                 </div>
 
             </div>
+
+
+            <!-- PRÉCOMMANDES -->
+
+            <div class="preorders">
+
+                <div class="preorders-title">
+
+                    🎮 PRÉCOMMANDER GRAND THEFT AUTO VI
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <!-- STANDARD -->
+
+                    <article class="card">
+
+                        <div class="platform-icon">
+                            🎮
+                        </div>
+
+                        <h2>
+                            Édition Standard
+                        </h2>
+
+                        <div class="price">
+                            79,99 €
+                        </div>
+
+                        <div class="platforms">
+                            PS5 • Xbox Series X|S
+                        </div>
+
+
+                        <div class="feature-list">
+
+                            <div>
+                                ✅ Grand Theft Auto VI
+                            </div>
+
+                            <div>
+                                ✅ Pack Vintage Vice City
+                            </div>
+
+                            <div>
+                                ✅ 1 mois de GTA+
+                            </div>
+
+                            <div>
+                                ✅ Préchargement anticipé
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="buy-button"
+                            onclick="openPlatformModal('standard')"
+                        >
+                            Précommander
+                        </button>
+
+                    </article>
+
+
+                    <!-- ULTIMATE -->
+
+                    <article class="card ultimate">
+
+                        <div class="recommended">
+                            ⭐ RECOMMANDÉ
+                        </div>
+
+                        <div class="platform-icon">
+                            💎
+                        </div>
+
+                        <h2>
+                            Édition Ultime
+                        </h2>
+
+                        <div class="price">
+                            99,99 €
+                        </div>
+
+                        <div class="platforms">
+                            PS5 • Xbox Series X|S
+                        </div>
+
+
+                        <div class="feature-list">
+
+                            <div>
+                                ✅ Grand Theft Auto VI
+                            </div>
+
+                            <div>
+                                ✅ Pack Vintage Vice City
+                            </div>
+
+                            <div>
+                                ✅ 1 mois de GTA+
+                            </div>
+
+                            <div>
+                                ✅ Préchargement anticipé
+                            </div>
+
+                            <div>
+                                ✅ Contenus premium supplémentaires
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="buy-button"
+                            onclick="openPlatformModal('ultimate')"
+                        >
+                            Précommander
+                        </button>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
 
         </div>
 
     </div>
 
 
-    <div class="footer">
-
-        GTA 6 SOON • GRAND THEFT AUTO VI
-
-    </div>
-
 </section>
 
 
+<!-- =========================================================
+     PHYSIQUE
+========================================================= -->
 
-<!-- =====================================================
-     EDITIONS
-====================================================== -->
-
-<section class="page-section" id="editions">
+<section class="section">
 
 <div class="section-container">
 
@@ -1627,197 +1959,62 @@ footer{
     <div class="section-heading">
 
         <h2>
-            Compare les éditions
+            📦 Acheter en physique
         </h2>
 
         <p>
-            Choisis entre l'Édition Standard et l'Édition Ultime.
+            Retrouve les différentes options d'achat.
         </p>
 
     </div>
 
 
-    <div class="editions">
-
-
-        <!-- STANDARD -->
-
-        <article class="edition">
-
-            <div class="edition-icon">
-                🎮
-            </div>
-
-            <h3>
-                Édition Standard
-            </h3>
-
-            <div class="price">
-                79,99 €
-            </div>
-
-            <div class="platforms">
-                PS5 • Xbox Series X|S
-            </div>
-
-
-            <div class="features-list">
-
-                <div>
-                    ✅ Grand Theft Auto VI
-                </div>
-
-                <div>
-                    ✅ Pack Vintage Vice City
-                </div>
-
-                <div>
-                    ✅ 1 mois de GTA+ avec précommande numérique
-                </div>
-
-                <div>
-                    ✅ Préchargement 7 jours avant la sortie
-                </div>
-
-                <div>
-                    ❌ Contenu premium de l'édition Ultime
-                </div>
-
-            </div>
-
-
-            <a
-                class="buy-button"
-                href="https://store.playstation.com/fr-fr/product/EP1004-PPSA01547_00-GTAVISTANDARD001"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Précommander sur PlayStation
-            </a>
-
-        </article>
-
-
-
-        <!-- ULTIMATE -->
-
-        <article class="edition ultimate">
-
-            <div class="recommended">
-                ⭐ RECOMMANDÉ
-            </div>
-
-
-            <div class="edition-icon">
-                💎
-            </div>
-
-            <h3>
-                Édition Ultime
-            </h3>
-
-            <div class="price">
-                99,99 €
-            </div>
-
-            <div class="platforms">
-                PS5 • Xbox Series X|S
-            </div>
-
-
-            <div class="features-list">
-
-                <div>
-                    ✅ Grand Theft Auto VI
-                </div>
-
-                <div>
-                    ✅ Pack Vintage Vice City
-                </div>
-
-                <div>
-                    ✅ 1 mois de GTA+ avec précommande numérique
-                </div>
-
-                <div>
-                    ✅ Préchargement 7 jours avant la sortie
-                </div>
-
-                <div>
-                    ✅ Contenus premium supplémentaires
-                </div>
-
-                <div>
-                    ✅ Collection exclusive de contenu Ultimate
-                </div>
-
-            </div>
-
-
-            <a
-                class="buy-button"
-                href="https://store.playstation.com/fr-fr/concept/10000730"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Précommander l'édition Ultime
-            </a>
-
-        </article>
-
-
-    </div>
-
-
-    <!-- PHYSIQUE -->
-
     <div class="physical">
 
         <h2>
-            📦 Version physique
+            Version physique
         </h2>
 
         <p>
 
-            La version physique officielle est proposée
+            La version physique peut être proposée
             sous forme de boîte avec un code de téléchargement.
-            Elle ne contient pas de disque.
+            Vérifie les détails indiqués par le vendeur
+            avant l'achat.
 
         </p>
 
 
         <div class="physical-buttons">
 
-
             <a
                 class="physical-button"
-                href="https://store.rockstargames.com/fr/game/buy-gta-vi"
+                href="https://www.e.leclerc/fp/grand-theft-auto-vi-code-in-a-box-ps5-5026555439824"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                ⭐ Boutique Rockstar
+                🛒 E.Leclerc
             </a>
 
 
             <a
                 class="physical-button"
-                href="https://store.playstation.com/fr-fr/product/EP1004-PPSA01547_00-GTAVISTANDARD001"
+                href="https://www.fnac.com"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                🎮 PlayStation
+                🎮 Fnac
             </a>
 
 
             <a
                 class="physical-button"
-                href="https://www.xbox.com/fr-FR/games/store/grand-theft-auto-vi/9P3H4968GRSM/0017"
+                href="https://www.carrefour.fr"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                🟢 Xbox
+                🛒 Carrefour
             </a>
-
 
         </div>
 
@@ -1829,11 +2026,11 @@ footer{
 
 
 
-<!-- =====================================================
-     VIDEOS OFFICIELLES
-====================================================== -->
+<!-- =========================================================
+     VIDÉOS
+========================================================= -->
 
-<section class="page-section" id="trailers">
+<section class="section">
 
 <div class="section-container">
 
@@ -1841,11 +2038,11 @@ footer{
     <div class="section-heading">
 
         <h2>
-            Les vidéos officielles
+            🎬 Vidéos officielles
         </h2>
 
         <p>
-            Découvrez Grand Theft Auto VI.
+            Découvrez les vidéos officielles de GTA VI.
         </p>
 
     </div>
@@ -1853,8 +2050,6 @@ footer{
 
     <div class="trailer-grid">
 
-
-        <!-- EXTENDED LOOK -->
 
         <article class="trailer">
 
@@ -1890,9 +2085,6 @@ footer{
         </article>
 
 
-
-        <!-- TRAILER 2 -->
-
         <article class="trailer">
 
             <iframe
@@ -1927,9 +2119,6 @@ footer{
         </article>
 
 
-
-        <!-- TRAILER 1 -->
-
         <article class="trailer">
 
             <iframe
@@ -1947,7 +2136,7 @@ footer{
                 </h3>
 
                 <p>
-                    Le premier aperçu officiel de Vice City.
+                    Le premier aperçu officiel de GTA VI.
                 </p>
 
                 <a
@@ -1972,11 +2161,11 @@ footer{
 
 
 
-<!-- =====================================================
-     INFORMATIONS
-====================================================== -->
+<!-- =========================================================
+     INFOS
+========================================================= -->
 
-<section class="page-section">
+<section class="section">
 
 <div class="section-container">
 
@@ -1984,8 +2173,12 @@ footer{
     <div class="section-heading">
 
         <h2>
-            GTA VI en quelques infos
+            GTA VI
         </h2>
+
+        <p>
+            Les informations principales.
+        </p>
 
     </div>
 
@@ -2000,7 +2193,7 @@ footer{
             </div>
 
             <h3>
-                Date de sortie
+                Sortie
             </h3>
 
             <p>
@@ -2030,16 +2223,16 @@ footer{
         <div class="info-card">
 
             <div class="info-icon">
-                📦
+                🏝️
             </div>
 
             <h3>
-                Précommande
+                Leonida
             </h3>
 
             <p>
-                Les éditions Standard et Ultime sont
-                disponibles en précommande.
+                Explore un nouvel univers
+                inspiré de la Floride.
             </p>
 
         </div>
@@ -2055,19 +2248,174 @@ footer{
 
 <footer>
 
-    GTA 6 SOON • Grand Theft Auto VI • 2026
+    GTA 6 SOON • GRAND THEFT AUTO VI • 2026
 
 </footer>
+
 
 </div>
 
 
+<!-- =========================================================
+     MODAL
+========================================================= -->
 
-<!-- =====================================================
-     ÉCRAN APRÈS LE COMPTEUR
-====================================================== -->
+<div
+    id="platformModal"
+    class="modal"
+    aria-hidden="true"
+>
 
-<section id="released">
+
+    <div
+        class="modal-background"
+        onclick="closePlatformModal()"
+    ></div>
+
+
+    <div class="modal-box">
+
+
+        <button
+            class="modal-close"
+            onclick="closePlatformModal()"
+            aria-label="Fermer"
+        >
+            ✕
+        </button>
+
+
+        <div class="modal-icon">
+            🎮
+        </div>
+
+
+        <h2>
+            Choisis ta plateforme
+        </h2>
+
+
+        <p
+            id="modalDescription"
+            class="modal-description"
+        >
+            Sélectionne où tu souhaites acheter GTA VI.
+        </p>
+
+
+        <div class="platform-options">
+
+
+            <!-- PLAYSTATION -->
+
+            <a
+                id="playstationLink"
+                class="platform-option"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="platform-option-icon">
+                    🎮
+                </div>
+
+                <div class="platform-option-text">
+
+                    <strong>
+                        PlayStation 5
+                    </strong>
+
+                    <small>
+                        PlayStation Store
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- XBOX -->
+
+            <a
+                id="xboxLink"
+                class="platform-option"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="platform-option-icon">
+                    🟢
+                </div>
+
+                <div class="platform-option-text">
+
+                    <strong>
+                        Xbox Series X|S
+                    </strong>
+
+                    <small>
+                        Xbox Store
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- PHYSIQUE -->
+
+            <a
+                id="physicalLink"
+                class="platform-option physical-option"
+                href="https://www.e.leclerc/fp/grand-theft-auto-vi-code-in-a-box-ps5-5026555439824"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="platform-option-icon">
+                    📦
+                </div>
+
+                <div class="platform-option-text">
+
+                    <strong>
+                        Version physique
+                    </strong>
+
+                    <small>
+                        E.Leclerc
+                    </small>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+        <div class="modal-note">
+
+            Pour la version physique, vérifie les informations
+            du vendeur avant de commander.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     PAGE APRÈS LE COMPTEUR
+========================================================= -->
+
+<section
+    id="released"
+>
 
     <div class="released-box">
 
@@ -2085,23 +2433,16 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      JAVASCRIPT
-====================================================== -->
+========================================================= -->
 
 <script>
 
-/*
-=========================================================
-DATE DE SORTIE
-=========================================================
 
-19 novembre 2026
-00:00
-Heure française
-
-=========================================================
-*/
+/* =========================================================
+   COMPTEUR
+========================================================= */
 
 const releaseDate =
     new Date(
@@ -2118,18 +2459,12 @@ function updateCountdown(){
         releaseDate - now;
 
 
-    /*
-    -----------------------------------------------------
-    SORTIE ATTEINTE
-    -----------------------------------------------------
-    */
-
     if(
         difference <= 0
     ){
 
         document.getElementById(
-            "siteContent"
+            "site"
         ).style.display = "none";
 
 
@@ -2143,12 +2478,6 @@ function updateCountdown(){
     }
 
 
-    /*
-    -----------------------------------------------------
-    CALCUL JOURS
-    -----------------------------------------------------
-    */
-
     const days =
         Math.floor(
             difference /
@@ -2160,12 +2489,6 @@ function updateCountdown(){
             )
         );
 
-
-    /*
-    -----------------------------------------------------
-    CALCUL HEURES
-    -----------------------------------------------------
-    */
 
     const hours =
         Math.floor(
@@ -2180,12 +2503,6 @@ function updateCountdown(){
         );
 
 
-    /*
-    -----------------------------------------------------
-    CALCUL MINUTES
-    -----------------------------------------------------
-    */
-
     const minutes =
         Math.floor(
             (
@@ -2198,12 +2515,6 @@ function updateCountdown(){
         );
 
 
-    /*
-    -----------------------------------------------------
-    CALCUL SECONDES
-    -----------------------------------------------------
-    */
-
     const seconds =
         Math.floor(
             (
@@ -2212,12 +2523,6 @@ function updateCountdown(){
             ) % 60
         );
 
-
-    /*
-    -----------------------------------------------------
-    AFFICHAGE
-    -----------------------------------------------------
-    */
 
     document.getElementById(
         "days"
@@ -2245,12 +2550,6 @@ function updateCountdown(){
 }
 
 
-/*
-=========================================================
-DÉMARRAGE
-=========================================================
-*/
-
 updateCountdown();
 
 setInterval(
@@ -2258,8 +2557,169 @@ setInterval(
     1000
 );
 
+
+
+/* =========================================================
+   MODAL PRÉCOMMANDE
+========================================================= */
+
+function openPlatformModal(
+    edition
+){
+
+    const modal =
+        document.getElementById(
+            "platformModal"
+        );
+
+
+    const description =
+        document.getElementById(
+            "modalDescription"
+        );
+
+
+    const playstation =
+        document.getElementById(
+            "playstationLink"
+        );
+
+
+    const xbox =
+        document.getElementById(
+            "xboxLink"
+        );
+
+
+    const physical =
+        document.getElementById(
+            "physicalLink"
+        );
+
+
+    /* =====================================================
+       STANDARD
+    ===================================================== */
+
+    if(
+        edition === "standard"
+    ){
+
+        description.textContent =
+            "Choisis où tu souhaites acheter l'Édition Standard.";
+
+
+        playstation.href =
+            "https://store.playstation.com/fr-fr/product/EP1004-PPSA01547_00-GTAVISTANDARD001";
+
+
+        xbox.href =
+            "https://www.xbox.com/fr-FR/games/store/grand-theft-auto-vi/9P3H4968GRSM";
+
+
+        physical.href =
+            "https://www.e.leclerc/fp/grand-theft-auto-vi-code-in-a-box-ps5-5026555439824";
+
+
+        physical.style.display =
+            "flex";
+
+    }
+
+
+    /* =====================================================
+       ULTIMATE
+    ===================================================== */
+
+    if(
+        edition === "ultimate"
+    ){
+
+        description.textContent =
+            "Choisis où tu souhaites acheter l'Édition Ultime.";
+
+
+        playstation.href =
+            "https://store.playstation.com/fr-fr/concept/10000730";
+
+
+        xbox.href =
+            "https://www.xbox.com/en-US/games/store/grand-theft-auto-vi-ultimate-edition/9P3H4968GRSM";
+
+
+        physical.style.display =
+            "none";
+
+    }
+
+
+    modal.classList.add(
+        "active"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+/* =========================================================
+   FERMER
+========================================================= */
+
+function closePlatformModal(){
+
+    const modal =
+        document.getElementById(
+            "platformModal"
+        );
+
+
+    modal.classList.remove(
+        "active"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.style.overflow =
+        "";
+}
+
+
+/* =========================================================
+   TOUCHE ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closePlatformModal();
+
+        }
+
+    }
+);
+
+
 </script>
 
 
 </body>
+
 </html>
