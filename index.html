@@ -1,170 +1,1909 @@
-<section id="editions" class="info-section">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
 
-    <div class="section-title">
-        <span class="mini-badge">🎮 GTA VI</span>
-        <h2>Choisis ton édition</h2>
-        <p>Compare l'Édition Standard et l'Édition Ultime.</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GTA 6 SOON — Grand Theft Auto VI</title>
+
+<meta
+    name="description"
+    content="GTA 6 SOON — Grand Theft Auto VI"
+/>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+
+    background:#050507;
+
+    color:#ffffff;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --purple:#7657ff;
+    --purple2:#a486ff;
+
+    --dark:#07080c;
+    --panel:#10121a;
+
+    --line:#292d3a;
+
+    --muted:#a5adbd;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+/* =========================================================
+   IMAGE GTA 6
+========================================================= */
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    filter:
+        brightness(.92)
+        saturate(1.08)
+        contrast(1.02);
+
+    transform:scale(1.02);
+
+    animation:
+        zoomImage 20s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+@keyframes zoomImage{
+
+    from{
+        transform:scale(1.02);
+    }
+
+    to{
+        transform:scale(1.075);
+    }
+
+}
+
+
+/* =========================================================
+   OVERLAY LÉGER
+========================================================= */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.68) 0%,
+            rgba(0,0,0,.30) 34%,
+            rgba(0,0,0,.04) 62%,
+            rgba(0,0,0,.18) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.65) 0%,
+            rgba(0,0,0,.05) 55%,
+            rgba(0,0,0,.28) 100%
+        );
+
+    z-index:1;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        0 45px;
+
+    z-index:5;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.45),
+            transparent
+        );
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:21px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 3px 16px #000;
+
+}
+
+.logo-icon{
+
+    width:42px;
+    height:42px;
+
+    border-radius:13px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a98cff,
+            #6245e8
+        );
+
+    box-shadow:
+        0 8px 30px
+        rgba(118,87,255,.5);
+
+}
+
+.header-pill{
+
+    padding:
+        10px 15px;
+
+    border-radius:999px;
+
+    background:
+        rgba(0,0,0,.40);
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:3;
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+    padding:
+        110px 0 90px;
+
+}
+
+.hero-inner{
+
+    max-width:800px;
+
+    text-align:left;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        9px 15px;
+
+    border-radius:999px;
+
+    background:
+        rgba(0,0,0,.38);
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size:13px;
+
+    font-weight:850;
+
+    animation:
+        fadeDown
+        .8s
+        ease
+        both;
+
+}
+
+.badge-dot{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:
+        0 0 15px #ffffff;
+
+}
+
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+h1{
+
+    margin-top:27px;
+
+    font-size:
+        clamp(
+            60px,
+            8vw,
+            125px
+        );
+
+    line-height:.82;
+
+    letter-spacing:
+        -5px;
+
+    font-weight:950;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 8px 35px #000b,
+        0 0 80px #0005;
+
+    animation:
+        titleIn
+        1s
+        .1s
+        ease
+        both;
+
+}
+
+.title-main{
+
+    display:block;
+
+    color:#ffffff;
+
+}
+
+.title-grand{
+
+    display:block;
+
+    margin-top:13px;
+
+    font-size:.58em;
+
+    line-height:.9;
+
+    letter-spacing:
+        -2px;
+
+}
+
+.title-auto{
+
+    display:block;
+
+    font-size:.70em;
+
+    line-height:.9;
+
+    margin-top:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffd2df,
+            #ffffff
+        );
+
+    background-size:200%;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        shine
+        4s
+        linear
+        infinite;
+
+}
+
+
+@keyframes titleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(35px)
+            scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes shine{
+
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:200%;
+    }
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description{
+
+    max-width:650px;
+
+    margin-top:26px;
+
+    color:
+        rgba(255,255,255,.92);
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    text-shadow:
+        0 3px 15px #000;
+
+    animation:
+        fadeUp
+        1s
+        .3s
+        ease
+        both;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   COMPTEUR
+========================================================= */
+
+.timer-card{
+
+    margin-top:34px;
+
+    width:min(820px,100%);
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:
+        rgba(0,0,0,.40);
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    backdrop-filter:
+        blur(14px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.35);
+
+    animation:
+        fadeUp
+        1s
+        .45s
+        ease
+        both;
+
+}
+
+.timer-title{
+
+    margin-bottom:16px;
+
+    font-size:13px;
+
+    font-weight:900;
+
+}
+
+.timer{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+
+}
+
+.time-box{
+
+    padding:
+        20px 12px;
+
+    border-radius:16px;
+
+    background:
+        rgba(0,0,0,.48);
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+}
+
+.time-number{
+
+    font-size:
+        clamp(
+            34px,
+            5vw,
+            53px
+        );
+
+    line-height:1;
+
+    font-weight:950;
+
+}
+
+.time-label{
+
+    margin-top:7px;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size:10px;
+
+    font-weight:850;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+.release{
+
+    margin-top:17px;
+
+    font-size:13px;
+
+}
+
+.release strong{
+
+    color:#ffd6e1;
+
+}
+
+.disclaimer{
+
+    margin-top:8px;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.page-section{
+
+    padding:
+        95px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #08090d,
+            #0b0d13
+        );
+
+}
+
+.section-container{
+
+    width:min(1100px,92%);
+
+    margin:auto;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.section-heading h2{
+
+    font-size:
+        clamp(
+            34px,
+            5vw,
+            52px
+        );
+
+    letter-spacing:-2px;
+
+}
+
+.section-heading p{
+
+    margin-top:10px;
+
+    color:var(--muted);
+
+    font-size:16px;
+
+}
+
+
+/* =========================================================
+   EDITIONS
+========================================================= */
+
+.editions{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
+
+}
+
+.edition{
+
+    position:relative;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #141720,
+            #0d1017
+        );
+
+    border:
+        1px solid
+        var(--line);
+
+    box-shadow:
+        0 20px 60px
+        #0005;
+
+    transition:.25s;
+
+}
+
+.edition:hover{
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #7657ff88;
+
+}
+
+.edition.ultimate{
+
+    border-color:
+        #7657ff99;
+
+    box-shadow:
+        0 20px 70px
+        #7657ff20;
+
+}
+
+.recommended{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    padding:
+        6px 10px;
+
+    border-radius:999px;
+
+    background:
+        #7657ff22;
+
+    border:
+        1px solid
+        #7657ff66;
+
+    color:#c8bbff;
+
+    font-size:10px;
+
+    font-weight:900;
+
+}
+
+.edition-icon{
+
+    font-size:32px;
+
+}
+
+.edition h3{
+
+    margin-top:12px;
+
+    font-size:25px;
+
+}
+
+.price{
+
+    margin-top:10px;
+
+    font-size:40px;
+
+    font-weight:950;
+
+}
+
+.platforms{
+
+    margin-top:3px;
+
+    color:#818a9c;
+
+    font-size:12px;
+
+}
+
+.features-list{
+
+    display:grid;
+
+    gap:10px;
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+    color:#cdd2dc;
+
+    font-size:14px;
+
+}
+
+.buy-button{
+
+    width:100%;
+
+    min-height:48px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    color:#09090d;
+
+    font-size:14px;
+
+    font-weight:900;
+
+    transition:.2s;
+
+}
+
+.buy-button:hover{
+
+    transform:
+        translateY(-2px);
+
+    background:#ffdce6;
+
+}
+
+
+/* =========================================================
+   PHYSIQUE
+========================================================= */
+
+.physical{
+
+    margin-top:22px;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17132e,
+            #10131a
+        );
+
+    border:
+        1px solid
+        #332c5c;
+
+    text-align:center;
+
+}
+
+.physical h2{
+
+    font-size:30px;
+
+}
+
+.physical p{
+
+    max-width:750px;
+
+    margin:
+        12px auto 25px;
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+.physical-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.physical-button{
+
+    min-height:46px;
+
+    padding:
+        0 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:#151923;
+
+    border:
+        1px solid
+        #303648;
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:850;
+
+    transition:.2s;
+
+}
+
+.physical-button:hover{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #7657ff88;
+
+}
+
+
+/* =========================================================
+   VIDÉOS
+========================================================= */
+
+.trailer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.trailer{
+
+    overflow:hidden;
+
+    border-radius:19px;
+
+    background:#10131b;
+
+    border:
+        1px solid
+        var(--line);
+
+    box-shadow:
+        0 20px 50px
+        #0005;
+
+}
+
+.trailer iframe{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    display:block;
+
+    border:0;
+
+}
+
+.trailer-info{
+
+    padding:18px;
+
+}
+
+.trailer-info h3{
+
+    font-size:18px;
+
+}
+
+.trailer-info p{
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.5;
+
+}
+
+.youtube-link{
+
+    display:inline-flex;
+
+    margin-top:13px;
+
+    color:#c1b5ff;
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   INFOS
+========================================================= */
+
+.info-grid{
+
+    margin-top:18px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+
+}
+
+.info-card{
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121620,
+            #0e1118
+        );
+
+    border:
+        1px solid
+        var(--line);
+
+}
+
+.info-icon{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+.info-card h3{
+
+    font-size:17px;
+
+    margin-bottom:8px;
+
+}
+
+.info-card p{
+
+    color:#8e97a9;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:
+        30px 0;
+
+    background:#07080c;
+
+    border-top:
+        1px solid
+        #202532;
+
+    color:#697387;
+
+    font-size:12px;
+
+    text-align:center;
+
+}
+
+
+/* =========================================================
+   PAGE DE FIN
+========================================================= */
+
+#released{
+
+    display:none;
+
+    min-height:100vh;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #39266e,
+            #0f0c1b 45%,
+            #050507 85%
+        );
+
+}
+
+.released-box{
+
+    width:min(800px,92%);
+
+    padding:50px 25px;
+
+    border-radius:25px;
+
+    background:
+        rgba(15,16,24,.90);
+
+    border:
+        1px solid
+        #5b4e9e;
+
+    box-shadow:
+        0 35px 100px
+        #000b;
+
+}
+
+.released-box h2{
+
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            70px
+        );
+
+    margin-bottom:12px;
+
+}
+
+.released-box p{
+
+    color:#aeb4c5;
+
+    font-size:17px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:850px){
+
+    .header{
+
+        padding:
+            0 20px;
+
+    }
+
+    .header-pill{
+
+        display:none;
+
+    }
+
+    .hero-inner{
+
+        max-width:100%;
+
+        text-align:center;
+
+    }
+
+    .badge{
+
+        justify-content:center;
+
+    }
+
+    .hero-content{
+
+        padding-top:105px;
+
+    }
+
+    h1{
+
+        font-size:56px;
+
+        letter-spacing:-3px;
+
+    }
+
+    .hero-description{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .timer{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .editions{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .trailer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:520px){
+
+    .hero{
+
+        min-height:
+            100svh;
+
+    }
+
+    .hero-content{
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+    h1{
+
+        font-size:48px;
+
+        letter-spacing:-2px;
+
+    }
+
+    .title-grand{
+
+        font-size:.52em;
+
+    }
+
+    .title-auto{
+
+        font-size:.63em;
+
+    }
+
+    .hero-description{
+
+        font-size:15px;
+
+    }
+
+    .timer-card{
+
+        padding:15px;
+
+    }
+
+    .time-box{
+
+        padding:17px 8px;
+
+    }
+
+    .number{
+
+        font-size:32px;
+
+    }
+
+}
+
+
+/* =========================================================
+   QUAND LE SITE EST OUVERT
+========================================================= */
+
+#siteContent{
+    display:block;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PAGE PRINCIPALE
+====================================================== -->
+
+<div id="siteContent">
+
+
+<section class="hero">
+
+
+    <!-- TA PHOTO -->
+
+    <img
+        src="gta6.png"
+        class="hero-image"
+        alt="Grand Theft Auto VI"
+    >
+
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                VI
+            </div>
+
+            GTA 6 SOON
+
+        </div>
+
+
+        <div class="header-pill">
+
+            GRAND THEFT AUTO VI
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <div class="hero-content">
+
+        <div class="hero-inner">
+
+
+            <div class="badge">
+
+                <span class="badge-dot"></span>
+
+                GTA 6 SOON
+
+            </div>
+
+
+            <h1>
+
+                <span class="title-main">
+                    GTA 6 SOON
+                </span>
+
+                <span class="title-grand">
+                    GRAND THEFT
+                </span>
+
+                <span class="title-auto">
+                    AUTO VI
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Le prochain chapitre de Grand Theft Auto arrive
+                le 19 novembre 2026 sur PlayStation 5 et
+                Xbox Series X|S.
+
+            </p>
+
+
+            <!-- COMPTEUR -->
+
+            <div class="timer-card">
+
+                <div class="timer-title">
+
+                    ⏳ COMPTE À REBOURS AVANT LA SORTIE
+
+                </div>
+
+
+                <div class="timer">
+
+
+                    <div class="time-box">
+
+                        <div
+                            class="time-number"
+                            id="days"
+                        >
+                            00
+                        </div>
+
+                        <div class="time-label">
+                            JOURS
+                        </div>
+
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <div
+                            class="time-number"
+                            id="hours"
+                        >
+                            00
+                        </div>
+
+                        <div class="time-label">
+                            HEURES
+                        </div>
+
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <div
+                            class="time-number"
+                            id="minutes"
+                        >
+                            00
+                        </div>
+
+                        <div class="time-label">
+                            MINUTES
+                        </div>
+
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <div
+                            class="time-number"
+                            id="seconds"
+                        >
+                            00
+                        </div>
+
+                        <div class="time-label">
+                            SECONDES
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="release">
+
+                    Sortie prévue le
+                    <strong>
+                        19 novembre 2026
+                    </strong>
+
+                </div>
+
+
+                <div class="disclaimer">
+
+                    ⚠️ La date affichée est susceptible
+                    d'être modifiée.
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="edition-grid">
+
+    <div class="footer">
+
+        GTA 6 SOON • GRAND THEFT AUTO VI
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDITIONS
+====================================================== -->
+
+<section class="page-section" id="editions">
+
+<div class="section-container">
+
+
+    <div class="section-heading">
+
+        <h2>
+            Compare les éditions
+        </h2>
+
+        <p>
+            Choisis entre l'Édition Standard et l'Édition Ultime.
+        </p>
+
+    </div>
+
+
+    <div class="editions">
+
 
         <!-- STANDARD -->
-        <div class="edition-card">
 
-            <div class="edition-icon">🎮</div>
+        <article class="edition">
 
-            <h3>Édition Standard</h3>
+            <div class="edition-icon">
+                🎮
+            </div>
 
-            <div class="price">79,99 €</div>
+            <h3>
+                Édition Standard
+            </h3>
 
-            <div class="platform">
+            <div class="price">
+                79,99 €
+            </div>
+
+            <div class="platforms">
                 PS5 • Xbox Series X|S
             </div>
 
-            <div class="edition-list">
-                <div>✅ GTA VI complet</div>
-                <div>✅ Pack Vintage Vice City</div>
-                <div>✅ 1 mois de GTA+ avec précommande numérique</div>
-                <div>✅ Préchargement dès le 12 novembre</div>
-                <div>❌ Contenu Ultimate supplémentaire</div>
+
+            <div class="features-list">
+
+                <div>
+                    ✅ Grand Theft Auto VI
+                </div>
+
+                <div>
+                    ✅ Pack Vintage Vice City
+                </div>
+
+                <div>
+                    ✅ 1 mois de GTA+ avec précommande numérique
+                </div>
+
+                <div>
+                    ✅ Préchargement 7 jours avant la sortie
+                </div>
+
+                <div>
+                    ❌ Contenu premium de l'édition Ultime
+                </div>
+
             </div>
 
+
             <a
-                class="edition-btn"
+                class="buy-button"
                 href="https://store.playstation.com/fr-fr/product/EP1004-PPSA01547_00-GTAVISTANDARD001"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
             >
-                Précommander
+                Précommander sur PlayStation
             </a>
 
-        </div>
+        </article>
+
 
 
         <!-- ULTIMATE -->
-        <div class="edition-card featured">
 
-            <div class="ultimate-badge">
+        <article class="edition ultimate">
+
+            <div class="recommended">
                 ⭐ RECOMMANDÉ
             </div>
 
-            <div class="edition-icon">💎</div>
 
-            <h3>Édition Ultime</h3>
+            <div class="edition-icon">
+                💎
+            </div>
 
-            <div class="price">99,99 €</div>
+            <h3>
+                Édition Ultime
+            </h3>
 
-            <div class="platform">
+            <div class="price">
+                99,99 €
+            </div>
+
+            <div class="platforms">
                 PS5 • Xbox Series X|S
             </div>
 
-            <div class="edition-list">
-                <div>✅ GTA VI complet</div>
-                <div>✅ Pack Vintage Vice City</div>
-                <div>✅ 1 mois de GTA+ avec précommande numérique</div>
-                <div>✅ Préchargement dès le 12 novembre</div>
-                <div>✅ Contenu premium Ultimate</div>
+
+            <div class="features-list">
+
+                <div>
+                    ✅ Grand Theft Auto VI
+                </div>
+
+                <div>
+                    ✅ Pack Vintage Vice City
+                </div>
+
+                <div>
+                    ✅ 1 mois de GTA+ avec précommande numérique
+                </div>
+
+                <div>
+                    ✅ Préchargement 7 jours avant la sortie
+                </div>
+
+                <div>
+                    ✅ Contenus premium supplémentaires
+                </div>
+
+                <div>
+                    ✅ Collection exclusive de contenu Ultimate
+                </div>
+
             </div>
 
+
             <a
-                class="edition-btn ultimate-btn"
+                class="buy-button"
                 href="https://store.playstation.com/fr-fr/concept/10000730"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
             >
-                Précommander
+                Précommander l'édition Ultime
             </a>
 
-        </div>
+        </article>
+
 
     </div>
 
 
     <!-- PHYSIQUE -->
 
-    <div class="physical-box">
+    <div class="physical">
 
-        <h2>📦 Version physique</h2>
+        <h2>
+            📦 Version physique
+        </h2>
 
         <p>
-            GTA VI existe en boîte physique,
-            mais la boîte contient un <strong>code de téléchargement</strong>.
-            Aucun disque n'est inclus.
+
+            La version physique officielle est proposée
+            sous forme de boîte avec un code de téléchargement.
+            Elle ne contient pas de disque.
+
         </p>
+
 
         <div class="physical-buttons">
 
-            <a
-                class="store-btn"
-                href="https://www.fnac.com/a23085276/Grand-Theft-Auto-GTA-VI-PS5-Jeu-video-Playstation-5"
-                target="_blank"
-                rel="noopener"
-            >
-                🎮 Acheter PS5
-            </a>
 
             <a
-                class="store-btn"
-                href="https://www.fnac.com/a23085273/Grand-Theft-Auto-GTA-VI-Xbox-Series-X-S-Jeu-video-Xbox-Series"
+                class="physical-button"
+                href="https://store.rockstargames.com/fr/game/buy-gta-vi"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
             >
-                🟢 Acheter Xbox
+                ⭐ Boutique Rockstar
             </a>
 
+
             <a
-                class="store-btn"
-                href="https://www.carrefour.fr/jeux-consoles/gta-6"
+                class="physical-button"
+                href="https://store.playstation.com/fr-fr/product/EP1004-PPSA01547_00-GTAVISTANDARD001"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
             >
-                🛒 Carrefour
+                🎮 PlayStation
             </a>
+
+
+            <a
+                class="physical-button"
+                href="https://www.xbox.com/fr-FR/games/store/grand-theft-auto-vi/9P3H4968GRSM/0017"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🟢 Xbox
+            </a>
+
 
         </div>
 
     </div>
 
+</div>
 
-    <!-- VIDEOS -->
+</section>
 
-    <div id="trailers" class="trailers">
 
-        <div class="section-title">
-            <span class="mini-badge">🎬 VIDÉOS OFFICIELLES</span>
-            <h2>Découvrez GTA VI</h2>
-            <p>Les trois vidéos officielles de Rockstar Games.</p>
-        </div>
 
-        <div class="trailer-grid">
+<!-- =====================================================
+     VIDEOS OFFICIELLES
+====================================================== -->
 
-            <div class="trailer-card">
+<section class="page-section" id="trailers">
 
-                <div class="trailer-label">
-                    NOUVEAU
-                </div>
+<div class="section-container">
+
+
+    <div class="section-heading">
+
+        <h2>
+            Les vidéos officielles
+        </h2>
+
+        <p>
+            Découvrez Grand Theft Auto VI.
+        </p>
+
+    </div>
+
+
+    <div class="trailer-grid">
+
+
+        <!-- EXTENDED LOOK -->
+
+        <article class="trailer">
+
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/tJbzMqJGH4k"
+                title="Grand Theft Auto VI — An Extended Look"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+
+            <div class="trailer-info">
 
                 <h3>
                     An Extended Look
                 </h3>
 
                 <p>
-                    Le grand aperçu de gameplay officiel.
+                    Le grand aperçu officiel de GTA VI.
                 </p>
 
                 <a
-                    class="trailer-btn"
+                    class="youtube-link"
                     href="https://www.youtube.com/watch?v=tJbzMqJGH4k"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                 >
-                    ▶ Regarder
+                    ▶ Regarder sur YouTube
                 </a>
 
             </div>
 
+        </article>
 
-            <div class="trailer-card">
+
+
+        <!-- TRAILER 2 -->
+
+        <article class="trailer">
+
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/VQRLujxTm3c"
+                title="Grand Theft Auto VI — Trailer 2"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+
+            <div class="trailer-info">
 
                 <h3>
                     Trailer 2
@@ -175,40 +1914,352 @@
                 </p>
 
                 <a
-                    class="trailer-btn"
+                    class="youtube-link"
                     href="https://www.youtube.com/watch?v=VQRLujxTm3c"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                 >
-                    ▶ Regarder
+                    ▶ Regarder sur YouTube
                 </a>
 
             </div>
 
+        </article>
 
-            <div class="trailer-card">
+
+
+        <!-- TRAILER 1 -->
+
+        <article class="trailer">
+
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/QdBZY2fkU-0"
+                title="Grand Theft Auto VI — Trailer 1"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+
+            <div class="trailer-info">
 
                 <h3>
                     Trailer 1
                 </h3>
 
                 <p>
-                    La première découverte de Vice City.
+                    Le premier aperçu officiel de Vice City.
                 </p>
 
                 <a
-                    class="trailer-btn"
+                    class="youtube-link"
                     href="https://www.youtube.com/watch?v=QdBZY2fkU-0"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                 >
-                    ▶ Regarder
+                    ▶ Regarder sur YouTube
                 </a>
 
             </div>
 
+        </article>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INFORMATIONS
+====================================================== -->
+
+<section class="page-section">
+
+<div class="section-container">
+
+
+    <div class="section-heading">
+
+        <h2>
+            GTA VI en quelques infos
+        </h2>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📅
+            </div>
+
+            <h3>
+                Date de sortie
+            </h3>
+
+            <p>
+                19 novembre 2026.
+            </p>
+
         </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🎮
+            </div>
+
+            <h3>
+                Plateformes
+            </h3>
+
+            <p>
+                PlayStation 5 et Xbox Series X|S.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📦
+            </div>
+
+            <h3>
+                Précommande
+            </h3>
+
+            <p>
+                Les éditions Standard et Ultime sont
+                disponibles en précommande.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+    GTA 6 SOON • Grand Theft Auto VI • 2026
+
+</footer>
+
+</div>
+
+
+
+<!-- =====================================================
+     ÉCRAN APRÈS LE COMPTEUR
+====================================================== -->
+
+<section id="released">
+
+    <div class="released-box">
+
+        <h2>
+            🎉 GTA VI EST DISPONIBLE
+        </h2>
+
+        <p>
+            Grand Theft Auto VI est maintenant disponible.
+        </p>
 
     </div>
 
 </section>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+/*
+=========================================================
+DATE DE SORTIE
+=========================================================
+
+19 novembre 2026
+00:00
+Heure française
+
+=========================================================
+*/
+
+const releaseDate =
+    new Date(
+        "2026-11-19T00:00:00+01:00"
+    ).getTime();
+
+
+function updateCountdown(){
+
+    const now =
+        Date.now();
+
+    const difference =
+        releaseDate - now;
+
+
+    /*
+    -----------------------------------------------------
+    SORTIE ATTEINTE
+    -----------------------------------------------------
+    */
+
+    if(
+        difference <= 0
+    ){
+
+        document.getElementById(
+            "siteContent"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "released"
+        ).style.display = "flex";
+
+
+        return;
+
+    }
+
+
+    /*
+    -----------------------------------------------------
+    CALCUL JOURS
+    -----------------------------------------------------
+    */
+
+    const days =
+        Math.floor(
+            difference /
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
+        );
+
+
+    /*
+    -----------------------------------------------------
+    CALCUL HEURES
+    -----------------------------------------------------
+    */
+
+    const hours =
+        Math.floor(
+            (
+                difference /
+                (
+                    1000 *
+                    60 *
+                    60
+                )
+            ) % 24
+        );
+
+
+    /*
+    -----------------------------------------------------
+    CALCUL MINUTES
+    -----------------------------------------------------
+    */
+
+    const minutes =
+        Math.floor(
+            (
+                difference /
+                (
+                    1000 *
+                    60
+                )
+            ) % 60
+        );
+
+
+    /*
+    -----------------------------------------------------
+    CALCUL SECONDES
+    -----------------------------------------------------
+    */
+
+    const seconds =
+        Math.floor(
+            (
+                difference /
+                1000
+            ) % 60
+        );
+
+
+    /*
+    -----------------------------------------------------
+    AFFICHAGE
+    -----------------------------------------------------
+    */
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        String(days).padStart(2,"0");
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours).padStart(2,"0");
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes).padStart(2,"0");
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds).padStart(2,"0");
+
+}
+
+
+/*
+=========================================================
+DÉMARRAGE
+=========================================================
+*/
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+</script>
+
+
+</body>
+</html>
