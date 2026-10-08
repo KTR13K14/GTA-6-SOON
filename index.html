@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTA 6 SOON</title>
+<meta name="description" content="GTA 6 SOON — GTA 6 SOON.">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%}
+body{
+    overflow:hidden;
+    font-family:Inter,"Segoe UI",Arial,sans-serif;
+    color:#fff;
+    background:#050509;
+}
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+.hero-image{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    filter:brightness(.66) saturate(.92);
+    transform:scale(1.01);
+}
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.22) 48%,rgba(0,0,0,.72)),
+      linear-gradient(0deg,rgba(0,0,0,.74),rgba(0,0,0,.10) 55%,rgba(0,0,0,.42));
+}
+.topbar{
+    position:absolute;left:0;right:0;top:0;z-index:3;
+    height:82px;padding:0 42px;
+    display:flex;align-items:center;justify-content:space-between;
+}
+.brand{
+    display:flex;align-items:center;gap:11px;
+    font-size:23px;font-weight:850;
+    text-shadow:0 3px 15px #0008;
+}
+.brand-icon{
+    width:40px;height:40px;border-radius:12px;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,#a98cff,#6245e8);
+    box-shadow:0 8px 28px #7657ff66;
+}
+.status{
+    padding:9px 14px;border-radius:999px;
+    background:#00000045;border:1px solid #ffffff22;
+    backdrop-filter:blur(14px);
+    font-size:13px;font-weight:750;
+}
+.content{
+    position:relative;z-index:2;
+    width:min(1000px,92%);
+    text-align:center;
+}
+.badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:9px 15px;border-radius:999px;
+    background:#00000045;border:1px solid #ffffff22;
+    backdrop-filter:blur(12px);
+    font-size:13px;font-weight:800;
+}
+.dot{
+    width:8px;height:8px;border-radius:50%;
+    background:#9b7cff;box-shadow:0 0 14px #9b7cff;
+}
+h1{
+    margin-top:24px;
+    font-size:clamp(54px,9vw,120px);
+    line-height:.86;
+    letter-spacing:-4px;
+    font-weight:950;
+    text-transform:uppercase;
+    text-shadow:0 8px 35px #000b;
+}
+.soon{display:block}
+.game{
+    display:block;
+    margin-top:10px;
+    background:linear-gradient(90deg,#fff,#ffd1e3,#fff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+.subtitle{
+    margin:26px auto 0;
+    max-width:710px;
+    color:#f0edf5;
+    font-size:18px;
+    line-height:1.55;
+    text-shadow:0 3px 16px #000b;
+}
+.timer-card{
+    width:min(820px,100%);
+    margin:34px auto 0;
+    padding:22px;
+    border-radius:22px;
+    background:#00000042;
+    border:1px solid #ffffff24;
+    backdrop-filter:blur(13px);
+    box-shadow:0 22px 70px #0006;
+}
+.timer{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+.box{
+    padding:18px 12px;border-radius:15px;
+    background:#090a0f9a;border:1px solid #ffffff18;
+}
+.num{font-size:clamp(32px,5vw,54px);font-weight:900;line-height:1}
+.label{
+    margin-top:7px;color:#d6cfdb;
+    font-size:10px;font-weight:850;letter-spacing:1.5px;
+}
+.date{margin-top:17px;font-size:13px;color:#eee8f1}
+.notice{margin-top:10px;font-size:12px;color:#d4ccd7}
+.open-page{
+    display:none;
+    position:fixed;inset:0;z-index:10;
+    align-items:center;justify-content:center;
+    text-align:center;
+    background:radial-gradient(circle at 50% 20%,#39256d,#13101f 38%,#06070b);
+}
+.open-card{
+    width:min(820px,92%);
+    padding:45px 28px;
+    border-radius:24px;
+    background:#10121ae8;
+    border:1px solid #4b3e86;
+    box-shadow:0 35px 100px #000b;
+}
+.open-card h2{font-size:clamp(42px,6vw,68px);margin-bottom:12px}
+.open-card p{color:#aab1c1;font-size:17px}
+.footer{
+    position:absolute;left:0;right:0;bottom:18px;z-index:3;
+    text-align:center;color:#ffffffa8;font-size:12px;
+}
+@media(max-width:700px){
+    .topbar{padding:0 18px}
+    .status{display:none}
+    h1{letter-spacing:-2px}
+    .timer{grid-template-columns:repeat(2,1fr)}
+    .timer-card{padding:15px}
+}
+</style>
+</head>
+
+<body>
+
+<section id="maintenance" class="hero">
+
+    <img src="gta6.png" class="hero-image" alt="Illustration">
+
+    <div class="topbar">
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            GTA 6 SOON
+        </div>
+        <div class="status">Maintenance en cours</div>
+    </div>
+
+    <div class="content">
+
+        <div class="badge">
+            <span class="dot"></span>
+            GTA 6 SOON
+        </div>
+
+        <h1>
+            <span class="soon">GTA 6 SOON</span>
+            <span class="game">GRAND THEFT AUTO VI</span>
+        </h1>
+
+        <p class="subtitle">
+            Aurora est actuellement en maintenance.
+            Nous préparons une nouvelle mise à jour et une nouvelle expérience.
+        </p>
+
+        <div class="timer-card">
+            <div class="timer">
+
+                <div class="box">
+                    <div class="num" id="days">00</div>
+                    <div class="label">JOURS</div>
+                </div>
+
+                <div class="box">
+                    <div class="num" id="hours">00</div>
+                    <div class="label">HEURES</div>
+                </div>
+
+                <div class="box">
+                    <div class="num" id="minutes">00</div>
+                    <div class="label">MINUTES</div>
+                </div>
+
+                <div class="box">
+                    <div class="num" id="seconds">00</div>
+                    <div class="label">SECONDES</div>
+                </div>
+
+            </div>
+
+            <div class="date">
+                Retour prévu le <strong>19 novembre 2026 à 00:00</strong>
+            </div>
+
+            <div class="notice">
+                ⚠️ La date est indicative et peut être modifiée.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 GTA 6 SOON
+    </div>
+
+</section>
+
+<section id="openPage" class="open-page">
+    <div class="open-card">
+        <h2>🎉 Aurora est de retour !</h2>
+        <p>La nouvelle version d’Aurora est maintenant disponible.</p>
+    </div>
+</section>
+
+<script>
+const targetDate = new Date("2026-11-19T00:00:00+01:00").getTime();
+
+function openAurora(){
+    document.getElementById("maintenance").style.display = "none";
+    document.getElementById("openPage").style.display = "flex";
+}
+
+function updateTimer(){
+    const diff = targetDate - Date.now();
+
+    if(diff <= 0){
+        openAurora();
+        return;
+    }
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").textContent = String(days).padStart(2,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+}
+
+updateTimer();
+setInterval(updateTimer,1000);
+</script>
+
+</body>
+</html>
