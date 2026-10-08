@@ -1,279 +1,1425 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GTA 6 SOON</title>
-<meta name="description" content="GTA 6 SOON — GTA 6 SOON.">
+
+<meta
+    name="description"
+    content="GTA 6 SOON — GRAND THEFT AUTO VI"
+>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;height:100%}
-body{
-    overflow:hidden;
-    font-family:Inter,"Segoe UI",Arial,sans-serif;
-    color:#fff;
-    background:#050509;
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#050507;
+    color:#fff;
+
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
 .hero{
     position:relative;
-    width:100%;
-    height:100vh;
-    min-height:650px;
+
+    min-height:100vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     overflow:hidden;
 }
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
 .hero-image{
     position:absolute;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     object-position:center;
-    filter:brightness(.66) saturate(.92);
-    transform:scale(1.01);
+
+    filter:
+        brightness(.88)
+        saturate(1.08)
+        contrast(1.04);
+
+    transform:scale(1.03);
+
+    animation:
+        cinematicZoom 18s
+        ease-in-out
+        infinite
+        alternate;
 }
-.hero::after{
-    content:"";
+
+@keyframes cinematicZoom{
+
+    from{
+        transform:scale(1.03);
+    }
+
+    to{
+        transform:scale(1.085);
+    }
+
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.overlay{
     position:absolute;
+
     inset:0;
+
     background:
-      linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.22) 48%,rgba(0,0,0,.72)),
-      linear-gradient(0deg,rgba(0,0,0,.74),rgba(0,0,0,.10) 55%,rgba(0,0,0,.42));
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.30),
+            rgba(0,0,0,.05) 50%,
+            rgba(0,0,0,.25)
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.04) 45%,
+            rgba(0,0,0,.55)
+        );
+
+    z-index:1;
 }
-.topbar{
-    position:absolute;left:0;right:0;top:0;z-index:3;
-    height:82px;padding:0 42px;
-    display:flex;align-items:center;justify-content:space-between;
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:82px;
+
+    z-index:5;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        0 42px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.35),
+            transparent
+        );
 }
-.brand{
-    display:flex;align-items:center;gap:11px;
-    font-size:23px;font-weight:850;
-    text-shadow:0 3px 15px #0008;
+
+.logo{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 3px 15px #000;
 }
-.brand-icon{
-    width:40px;height:40px;border-radius:12px;
-    display:grid;place-items:center;
-    background:linear-gradient(135deg,#a98cff,#6245e8);
-    box-shadow:0 8px 28px #7657ff66;
+
+.logo-icon{
+    width:42px;
+    height:42px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a98cff,
+            #6345e8
+        );
+
+    box-shadow:
+        0 8px 30px
+        rgba(118,87,255,.50);
+
+    font-size:23px;
 }
-.status{
-    padding:9px 14px;border-radius:999px;
-    background:#00000045;border:1px solid #ffffff22;
-    backdrop-filter:blur(14px);
-    font-size:13px;font-weight:750;
+
+.header-right{
+    padding:
+        9px 15px;
+
+    border-radius:999px;
+
+    background:
+        rgba(0,0,0,.32);
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size:12px;
+
+    font-weight:800;
 }
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
 .content{
-    position:relative;z-index:2;
-    width:min(1000px,92%);
+    position:relative;
+
+    z-index:4;
+
+    width:min(1100px,94%);
+
+    padding:
+        90px 0 70px;
+
     text-align:center;
 }
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
 .badge{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:9px 15px;border-radius:999px;
-    background:#00000045;border:1px solid #ffffff22;
-    backdrop-filter:blur(12px);
-    font-size:13px;font-weight:800;
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        9px 16px;
+
+    border-radius:999px;
+
+    background:
+        rgba(0,0,0,.35);
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size:13px;
+
+    font-weight:850;
+
+    animation:
+        fadeDown
+        .8s
+        ease
+        both;
 }
-.dot{
-    width:8px;height:8px;border-radius:50%;
-    background:#9b7cff;box-shadow:0 0 14px #9b7cff;
+
+.badge-dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 15px #fff;
 }
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-18px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   TITRE GTA 6
+===================================================== */
+
 h1{
-    margin-top:24px;
-    font-size:clamp(54px,9vw,120px);
-    line-height:.86;
-    letter-spacing:-4px;
+    margin-top:27px;
+
+    font-size:
+        clamp(
+            58px,
+            9vw,
+            130px
+        );
+
+    line-height:.82;
+
+    letter-spacing:
+        -5px;
+
     font-weight:950;
+
     text-transform:uppercase;
-    text-shadow:0 8px 35px #000b;
+
+    text-shadow:
+        0 8px 35px #000b,
+        0 0 80px #0005;
+
+    animation:
+        titleIn
+        1s
+        .1s
+        ease
+        both;
 }
-.soon{display:block}
-.game{
+
+.gta6-soon{
     display:block;
-    margin-top:10px;
-    background:linear-gradient(90deg,#fff,#ffd1e3,#fff);
+
+    color:#fff;
+}
+
+.grand-theft{
+    display:block;
+
+    margin-top:14px;
+
+    font-size:.60em;
+
+    letter-spacing:
+        -2px;
+
+    color:#fff;
+}
+
+.auto-vi{
+    display:block;
+
+    margin-top:4px;
+
+    font-size:.70em;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffd0df,
+            #ffffff
+        );
+
+    background-size:200%;
+
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
+
+    animation:
+        shine
+        4s
+        linear
+        infinite;
 }
-.subtitle{
-    margin:26px auto 0;
-    max-width:710px;
-    color:#f0edf5;
+
+@keyframes titleIn{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(35px)
+            scale(.96);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+@keyframes shine{
+
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:200%;
+    }
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.description{
+    max-width:720px;
+
+    margin:
+        28px auto 0;
+
+    color:
+        rgba(255,255,255,.94);
+
     font-size:18px;
-    line-height:1.55;
-    text-shadow:0 3px 16px #000b;
+
+    line-height:1.6;
+
+    text-shadow:
+        0 3px 17px #000;
+
+    animation:
+        fadeUp
+        .9s
+        .35s
+        ease
+        both;
 }
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
 .timer-card{
-    width:min(820px,100%);
-    margin:34px auto 0;
-    padding:22px;
-    border-radius:22px;
-    background:#00000042;
-    border:1px solid #ffffff24;
-    backdrop-filter:blur(13px);
-    box-shadow:0 22px 70px #0006;
+    width:min(850px,100%);
+
+    margin:
+        38px auto 0;
+
+    padding:24px;
+
+    border-radius:23px;
+
+    background:
+        rgba(0,0,0,.36);
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,.35);
+
+    animation:
+        fadeUp
+        1s
+        .5s
+        ease
+        both;
 }
+
+.timer-title{
+    margin-bottom:17px;
+
+    font-size:14px;
+
+    font-weight:900;
+}
+
 .timer{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:12px;
 }
-.box{
-    padding:18px 12px;border-radius:15px;
-    background:#090a0f9a;border:1px solid #ffffff18;
+
+.time-box{
+    padding:
+        20px 12px;
+
+    border-radius:16px;
+
+    background:
+        rgba(0,0,0,.48);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    transition:
+        transform .2s,
+        background .2s;
 }
-.num{font-size:clamp(32px,5vw,54px);font-weight:900;line-height:1}
+
+.time-box:hover{
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(0,0,0,.62);
+}
+
+.number{
+    font-size:
+        clamp(
+            34px,
+            5vw,
+            55px
+        );
+
+    line-height:1;
+
+    font-weight:950;
+}
+
 .label{
-    margin-top:7px;color:#d6cfdb;
-    font-size:10px;font-weight:850;letter-spacing:1.5px;
+    margin-top:7px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:10px;
+
+    font-weight:850;
+
+    letter-spacing:
+        1.6px;
 }
-.date{margin-top:17px;font-size:13px;color:#eee8f1}
-.notice{margin-top:10px;font-size:12px;color:#d4ccd7}
+
+.release{
+    margin-top:18px;
+
+    font-size:13px;
+
+    color:#fff;
+}
+
+.release strong{
+    color:#ffd1de;
+}
+
+.notice{
+    margin-top:9px;
+
+    font-size:12px;
+
+    color:
+        rgba(255,255,255,.65);
+}
+
+
+/* =====================================================
+   PRÉCOMMANDES
+===================================================== */
+
+.preorders{
+    margin-top:30px;
+
+    animation:
+        fadeUp
+        1s
+        .65s
+        ease
+        both;
+}
+
+.preorders-title{
+    margin-bottom:16px;
+
+    font-size:16px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 3px 15px #000;
+}
+
+.cards{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:13px;
+}
+
+.card{
+    padding:
+        20px 15px;
+
+    border-radius:18px;
+
+    background:
+        rgba(5,6,9,.48);
+
+    border:
+        1px solid
+        rgba(255,255,255,.19);
+
+    backdrop-filter:
+        blur(12px);
+
+    transition:
+        transform .2s,
+        border-color .2s,
+        background .2s;
+}
+
+.card:hover{
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(255,255,255,.40);
+
+    background:
+        rgba(5,6,9,.65);
+}
+
+.platform{
+    font-size:27px;
+
+    margin-bottom:9px;
+}
+
+.card h3{
+    font-size:16px;
+
+    margin-bottom:6px;
+}
+
+.card p{
+    min-height:38px;
+
+    margin-bottom:15px;
+
+    color:
+        rgba(255,255,255,.66);
+
+    font-size:12px;
+
+    line-height:1.4;
+}
+
+.buy{
+    width:100%;
+
+    min-height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:#fff;
+
+    color:#07070a;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    transition:
+        transform .2s,
+        background .2s;
+}
+
+.buy:hover{
+    transform:
+        translateY(-2px);
+
+    background:#ffdbe5;
+}
+
+.buy.dark{
+    background:
+        rgba(255,255,255,.10);
+
+    color:#fff;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+}
+
+.buy.dark:hover{
+    background:
+        rgba(255,255,255,.18);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:15px;
+
+    z-index:6;
+
+    text-align:center;
+
+    color:
+        rgba(255,255,255,.62);
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   ÉCRAN APRÈS LE COMPTEUR
+===================================================== */
+
 .open-page{
     display:none;
-    position:fixed;inset:0;z-index:10;
-    align-items:center;justify-content:center;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:50;
+
+    align-items:center;
+
+    justify-content:center;
+
     text-align:center;
-    background:radial-gradient(circle at 50% 20%,#39256d,#13101f 38%,#06070b);
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #39256e,
+            #100c1d 45%,
+            #050507 80%
+        );
 }
+
 .open-card{
-    width:min(820px,92%);
-    padding:45px 28px;
-    border-radius:24px;
-    background:#10121ae8;
-    border:1px solid #4b3e86;
-    box-shadow:0 35px 100px #000b;
+    width:min(800px,92%);
+
+    padding:
+        50px 28px;
+
+    border-radius:25px;
+
+    background:
+        rgba(15,16,24,.88);
+
+    border:
+        1px solid
+        #574a98;
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.65);
 }
-.open-card h2{font-size:clamp(42px,6vw,68px);margin-bottom:12px}
-.open-card p{color:#aab1c1;font-size:17px}
-.footer{
-    position:absolute;left:0;right:0;bottom:18px;z-index:3;
-    text-align:center;color:#ffffffa8;font-size:12px;
+
+.open-card h2{
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            70px
+        );
+
+    margin-bottom:13px;
 }
-@media(max-width:700px){
-    .topbar{padding:0 18px}
-    .status{display:none}
-    h1{letter-spacing:-2px}
-    .timer{grid-template-columns:repeat(2,1fr)}
-    .timer-card{padding:15px}
+
+.open-card p{
+    color:#adb3c3;
+
+    font-size:17px;
 }
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .cards{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .timer{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .header{
+        padding:0 18px;
+    }
+
+    .header-right{
+        display:none;
+    }
+
+    .content{
+        width:calc(100% - 18px);
+
+        padding:
+            70px 0 80px;
+    }
+
+    h1{
+        font-size:54px;
+
+        letter-spacing:-2px;
+    }
+
+    .grand-theft{
+        font-size:.55em;
+    }
+
+    .auto-vi{
+        font-size:.64em;
+    }
+
+    .description{
+        font-size:15px;
+    }
+
+    .timer-card{
+        padding:15px;
+    }
+
+    .time-box{
+        padding:18px 8px;
+    }
+
+    .number{
+        font-size:32px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .footer{
+        position:relative;
+        margin-top:-40px;
+        padding-bottom:15px;
+    }
+}
+
 </style>
 </head>
 
+
 <body>
 
-<section id="maintenance" class="hero">
 
-    <img src="gta6.png" class="hero-image" alt="Illustration">
+<!-- =====================================================
+     PAGE PRINCIPALE
+===================================================== -->
 
-    <div class="topbar">
-        <div class="brand">
-            <div class="brand-icon">A</div>
+<section
+    id="maintenance"
+    class="hero"
+>
+
+
+    <!-- PHOTO -->
+
+    <img
+        src="gta6.png"
+        class="hero-image"
+        alt="GTA 6"
+    >
+
+
+    <div class="overlay"></div>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                A
+            </div>
+
             GTA 6 SOON
+
         </div>
-        <div class="status">Maintenance en cours</div>
-    </div>
+
+
+        <div class="header-right">
+
+            GRAND THEFT AUTO VI
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENU -->
 
     <div class="content">
 
+
+        <!-- BADGE -->
+
         <div class="badge">
-            <span class="dot"></span>
+
+            <span class="badge-dot"></span>
+
             GTA 6 SOON
+
         </div>
+
+
+        <!-- TITRE -->
 
         <h1>
-            <span class="soon">GTA 6 SOON</span>
-            <span class="game">GRAND THEFT AUTO VI</span>
+
+            <span class="gta6-soon">
+                GTA 6 SOON
+            </span>
+
+            <span class="grand-theft">
+                GRAND THEFT
+            </span>
+
+            <span class="auto-vi">
+                AUTO VI
+            </span>
+
         </h1>
 
-        <p class="subtitle">
-            Aurora est actuellement en maintenance.
-            Nous préparons une nouvelle mise à jour et une nouvelle expérience.
+
+        <!-- DESCRIPTION -->
+
+        <p class="description">
+
+            Le prochain chapitre de Grand Theft Auto arrive
+            le 19 novembre 2026 sur PlayStation 5 et Xbox Series X|S.
+
         </p>
 
+
+        <!-- =================================================
+             COMPTEUR
+        ================================================== -->
+
         <div class="timer-card">
+
+
+            <div class="timer-title">
+
+                ⏳ COMPTE À REBOURS AVANT LA SORTIE
+
+            </div>
+
+
             <div class="timer">
 
-                <div class="box">
-                    <div class="num" id="days">00</div>
-                    <div class="label">JOURS</div>
+
+                <div class="time-box">
+
+                    <div
+                        class="number"
+                        id="days"
+                    >
+                        00
+                    </div>
+
+                    <div class="label">
+                        JOURS
+                    </div>
+
                 </div>
 
-                <div class="box">
-                    <div class="num" id="hours">00</div>
-                    <div class="label">HEURES</div>
+
+                <div class="time-box">
+
+                    <div
+                        class="number"
+                        id="hours"
+                    >
+                        00
+                    </div>
+
+                    <div class="label">
+                        HEURES
+                    </div>
+
                 </div>
 
-                <div class="box">
-                    <div class="num" id="minutes">00</div>
-                    <div class="label">MINUTES</div>
+
+                <div class="time-box">
+
+                    <div
+                        class="number"
+                        id="minutes"
+                    >
+                        00
+                    </div>
+
+                    <div class="label">
+                        MINUTES
+                    </div>
+
                 </div>
 
-                <div class="box">
-                    <div class="num" id="seconds">00</div>
-                    <div class="label">SECONDES</div>
+
+                <div class="time-box">
+
+                    <div
+                        class="number"
+                        id="seconds"
+                    >
+                        00
+                    </div>
+
+                    <div class="label">
+                        SECONDES
+                    </div>
+
                 </div>
+
 
             </div>
 
-            <div class="date">
-                Retour prévu le <strong>19 novembre 2026 à 00:00</strong>
+
+            <div class="release">
+
+                Sortie prévue le
+                <strong>
+                    19 novembre 2026
+                </strong>
+
             </div>
+
 
             <div class="notice">
-                ⚠️ La date est indicative et peut être modifiée.
+
+                ⚠️ La date affichée peut être modifiée.
+
             </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             PRÉCOMMANDES
+        ================================================== -->
+
+        <div class="preorders">
+
+
+            <div class="preorders-title">
+
+                🎮 PRÉCOMMANDER GRAND THEFT AUTO VI
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <!-- PS5 STANDARD -->
+
+                <div class="card">
+
+                    <div class="platform">
+                        🎮
+                    </div>
+
+                    <h3>
+                        PS5 — Standard
+                    </h3>
+
+                    <p>
+                        Édition Standard
+                    </p>
+
+                    <a
+                        class="buy"
+                        href="https://store.playstation.com/fr-fr/product/EP1004-PPSA01547_00-GTAVISTANDARD001"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Précommander
+                    </a>
+
+                </div>
+
+
+                <!-- PS5 ULTIMATE -->
+
+                <div class="card">
+
+                    <div class="platform">
+                        💎
+                    </div>
+
+                    <h3>
+                        PS5 — Ultimate
+                    </h3>
+
+                    <p>
+                        Édition Ultimate
+                    </p>
+
+                    <a
+                        class="buy"
+                        href="https://store.playstation.com/fr-fr/concept/10000730"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Précommander
+                    </a>
+
+                </div>
+
+
+                <!-- XBOX -->
+
+                <div class="card">
+
+                    <div class="platform">
+                        🟢
+                    </div>
+
+                    <h3>
+                        Xbox Series X|S
+                    </h3>
+
+                    <p>
+                        Édition Xbox officielle
+                    </p>
+
+                    <a
+                        class="buy"
+                        href="https://www.xbox.com/fr-FR/games/store/grand-theft-auto-vi/9P3H4968GRSM/0017"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Précommander
+                    </a>
+
+                </div>
+
+
+                <!-- ROCKSTAR -->
+
+                <div class="card">
+
+                    <div class="platform">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Rockstar Games
+                    </h3>
+
+                    <p>
+                        Voir toutes les éditions
+                    </p>
+
+                    <a
+                        class="buy dark"
+                        href="https://www.rockstargames.com/VI"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Site officiel
+                    </a>
+
+                </div>
+
+
+            </div>
+
         </div>
 
     </div>
 
+
+    <!-- FOOTER -->
+
     <div class="footer">
-        © 2026 GTA 6 SOON
+
+        GTA 6 SOON • GRAND THEFT AUTO VI
+
     </div>
 
 </section>
 
-<section id="openPage" class="open-page">
+
+
+<!-- =====================================================
+     APRÈS LE COMPTEUR
+===================================================== -->
+
+<section
+    id="openPage"
+    class="open-page"
+>
+
     <div class="open-card">
-        <h2>🎉 Aurora est de retour !</h2>
-        <p>La nouvelle version d’Aurora est maintenant disponible.</p>
+
+        <h2>
+            🎉 GTA VI EST DISPONIBLE
+        </h2>
+
+        <p>
+            Grand Theft Auto VI est maintenant disponible.
+        </p>
+
     </div>
+
 </section>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
-const targetDate = new Date("2026-11-19T00:00:00+01:00").getTime();
 
-function openAurora(){
-    document.getElementById("maintenance").style.display = "none";
-    document.getElementById("openPage").style.display = "flex";
+const targetDate =
+    new Date(
+        "2026-11-19T00:00:00+01:00"
+    ).getTime();
+
+
+function openGame(){
+
+    document.getElementById(
+        "maintenance"
+    ).style.display = "none";
+
+    document.getElementById(
+        "openPage"
+    ).style.display = "flex";
+
 }
+
 
 function updateTimer(){
-    const diff = targetDate - Date.now();
 
-    if(diff <= 0){
-        openAurora();
+    const now =
+        Date.now();
+
+    const difference =
+        targetDate - now;
+
+
+    /* ===============================================
+       DATE ATTEINTE
+    =============================================== */
+
+    if(
+        difference <= 0
+    ){
+
+        openGame();
+
         return;
+
     }
 
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff / (1000*60*60)) % 24);
-    const minutes = Math.floor((diff / (1000*60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("days").textContent = String(days).padStart(2,"0");
-    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
-    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
-    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+    /* ===============================================
+       CALCUL
+    =============================================== */
+
+    const days =
+        Math.floor(
+            difference /
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                difference /
+                (
+                    1000 *
+                    60 *
+                    60
+                )
+            ) % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                difference /
+                (
+                    1000 *
+                    60
+                )
+            ) % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                difference /
+                1000
+            ) % 60
+        );
+
+
+    /* ===============================================
+       AFFICHAGE
+    =============================================== */
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        String(days).padStart(2,"0");
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours).padStart(2,"0");
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes).padStart(2,"0");
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds).padStart(2,"0");
+
 }
 
+
+/* Lancement */
+
 updateTimer();
-setInterval(updateTimer,1000);
+
+setInterval(
+    updateTimer,
+    1000
+);
+
 </script>
+
 
 </body>
 </html>
