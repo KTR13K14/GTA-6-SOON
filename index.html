@@ -2028,7 +2028,7 @@ footer{
 
     }
 
-    .timer-card{
+    .countdown-card{
 
         padding:16px;
 
@@ -3000,6 +3000,7 @@ footer{
 
     <div
         class="language-backdrop"
+        onclick="closeLanguageModal()"
     ></div>
 
 
@@ -4474,6 +4475,12 @@ function openLanguageModal(){
 
 }
 
+function closeLanguageModal(){
+    const modal = document.getElementById("languageModal");
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+}
+
 
 function setLanguage(language){
 
@@ -4482,21 +4489,7 @@ function setLanguage(language){
     );
 
 
-    const modal =
-        document.getElementById(
-            "languageModal"
-        );
-
-
-    modal.classList.remove(
-        "active"
-    );
-
-
-    modal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
+    closeLanguageModal();
 
 }
 
